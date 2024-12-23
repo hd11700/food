@@ -1,0 +1,57 @@
+<view class='banner'>
+<image src='https://charfole-blog.oss-cn-shenzhen.aliyuncs.com/image/image-20210406122025984.png'></image>
+</view>
+
+<view class='button'>
+<view class='tongue' catchtap='clickDrinks'  hover-class="click">
+<image src='/images/diet.png'></image>
+</view>
+<view class='shop'  catchtap='clickLogs' hover-class="click">
+<image src='/images/shop.png'></image>
+</view>
+</view>
+
+
+<view class='solar'>
+<view class="solor_radius"><view></view></view>
+<view class='solar_text'>临近节气</view>
+<view class='solar_image'>
+  <view class="solar_image_title">{{countdownTitle}}</view>
+  <view class="solar_image_eng">{{solarTerm[countdownTimer].eng}}</view>
+  <view class="solar_image_date">{{solarTerm[countdownTimer].olddate}}</view>
+  <view class="solar_image_cns">{{solarTerm[countdownTimer].title}}</view>
+</view>
+</view>
+
+
+  
+
+<view class='weather'>
+<view class='weather_text'>今日健康指数</view>
+
+<view class="weather_container">
+<view class='weather_image'>
+  <view class='weather_image_text'>优</view>
+  <image src='/images/air.png'></image>
+</view>
+<view class='weather_image'>
+  <view class='weather_image_text'>{{now.humidity}}%</view>
+  <image src='/images/damp.png'></image>
+</view>
+<view class='weather_image'>
+  <view class='weather_image_text'>弱</view>
+  <image src='/images/ziwai.png'></image>
+</view>
+</view>
+</view>
+
+<view class='tips'>
+<view class='tips_image'>
+  <view class='tips_text'><text>{{solarTerms[countdownTimer].diet_tips}}</text></view>
+  <image src='/images/food_rec.png'></image>
+</view>
+<view class='tips_image'>
+  <view class='tips_text'><text>{{solarTerms[countdownTimer].sprit_tips}}</text></view>
+  <image src='/images/spit_rec.png'></image>
+</view>
+</view>

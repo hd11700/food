@@ -1,0 +1,118 @@
+page {
+  background-color: #F3F4F9;
+}
+.container {
+  margin: 10rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20rpx;
+  border-radius: 35rpx;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  width: 100%;
+  align-items: center;
+  margin-top: 25rpx;
+}
+
+label{
+  display: block;
+  flex-direction: row;
+  font-weight: bold;
+  font-size: 32rpx;
+  margin-left: 5rpx;
+  width: 10rpx;
+  flex: 1; /* 让标签占据剩余空间 */
+  text-shadow: 2px 2px 4px #9ee6c2; /* 水平偏移、垂直偏移、模糊半径、阴影颜色 */
+}
+
+input[type="text"]{
+  width: 80%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex: 3; /* 让输入框占据更多空间 */
+}
+input[type="number"]{
+  width: 80%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex: 3; /* 让输入框占据更多空间 */
+}
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10rpx;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex: 3; /* 让输入框占据更多空间 */
+}
+
+
+button:hover {
+  background-color: #498558;
+}
+.imageRootAll {
+  margin: 6rpx;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 700rpx;
+  height: 300rpx;
+  background-color: #f3fff9;
+  border-radius: 20rpx;
+}
+.imgItem {
+  margin: 6rpx;
+  margin-left: 20rpx;
+  position: relative;
+  width: 200rpx;
+  height: 200rpx;
+  background: rgb(238, 237, 237);
+  margin-top: 20rpx;
+}
+.img {
+  width: 100%;
+  height: 100%;
+}
+.closeImg {
+  position: absolute;
+  right: 0px;
+  width: 40rpx;
+  height: 40rpx;
+}
+.photo {
+  width: 50%;
+  height: 50%;
+  margin: 25%;
+}
+.out{
+  word-break: keep-all;
+  color: #ffffff;
+  border-radius: 10px;
+  background-color: #729b89;
+  padding: 12rpx 20rpx 12rpx 20rpx;
+  border-radius: 40rpx;
+  font-size: 35rpx;
+  width: 130rpx;
+  height: 70rpx;
+  text-align: center;
+}
+.picker{
+  width: 200rpx;
+  margin-top: 15rpx;
+  margin-left: 10rpx;
+  border-bottom: 5rpx solid #729b8e;
+  text-align: center;
+  font-size: 35rpx;
+  color: rgb(157, 159, 160);
+}
+

@@ -1,0 +1,90 @@
+<view class="top">
+  <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+    <view class="picker">
+      {{date}}
+    </view>
+  </picker>
+  <view class="cout">共 <span>{{count}}</span> 千卡</view>
+</view>
+
+<view class="contain">
+  <view class="title">
+    <view>运动消耗</view>
+  </view>
+  <view class="list">
+    <view>步数</view>
+    <view class="counter-container">
+      <view class="counterbutton" bindtap="decrement" data-value="step">-</view>
+      <view class="inputbox">
+        <input class="counter-value" type="number" value="{{step}}" bindchange="selectstep"></input><text>步</text>
+      </view>
+      <view class="counterbutton" bindtap="increment" data-value="step">+</view>
+    </view>
+  </view>
+  <view class="list">
+    <view>跑步</view>
+    <view class="counter-container">
+      <view class="counterbutton" bindtap="decrement" data-value="Running">-</view>
+      <view class="inputbox">
+        <input class="counter-value" type="number" value="{{Running}}" bindchange="selectRunning"></input><text> 分钟</text>
+      </view>
+      <view class="counterbutton" bindtap="increment" data-value="Running">+</view>
+    </view>
+  </view>
+  <view class="list">
+    <view>徒步</view>
+    <view class="counter-container">
+      <view class="counterbutton" bindtap="decrement" data-value="Hiking">-</view>
+      <view class="inputbox">
+        <input class="counter-value" type="number" value="{{Hiking}}" bindchange="selectHiking"></input><text> 分钟</text>
+      </view>
+      <view class="counterbutton" bindtap="increment" data-value="Hiking">+</view>
+    </view>
+  </view>
+  <view class="list">
+    <view>骑行</view>
+    <view class="counter-container">
+      <view class="counterbutton" bindtap="decrement" data-value="Cycling">-</view>
+      <view class="inputbox">
+        <input class="counter-value" type="number" value="{{Cycling}}" bindchange="selectCycling"></input><text> 分钟</text>
+      </view>
+      <view class="counterbutton" bindtap="increment" data-value="Cycling">+</view>
+    </view>
+  </view>
+  <view class="list">
+    <view>跳绳</view>
+    <view class="counter-container">
+      <view class="counterbutton" bindtap="decrement" data-value="Jumping">-</view>
+      <view class="inputbox">
+        <input class="counter-value" type="number" value="{{Jumping}}" bindchange="selectJumping"></input><text> 分钟</text>
+      </view>
+      <view class="counterbutton" bindtap="increment" data-value="Jumping">+</view>
+    </view>
+  </view>
+  <view class="list">
+    <view>游泳</view>
+    <view class="counter-container">
+      <view class="counterbutton" bindtap="decrement" data-value="Swimming">-</view>
+      <view class="inputbox">
+        <input class="counter-value" type="number" value="{{Swimming}}" bindchange="selectSwimming"></input><text> 分钟</text>
+      </view>
+      <view class="counterbutton" bindtap="increment" data-value="Swimming">+</view>
+    </view>
+  </view>
+  <view class="list">
+    <view>其他运动</view>
+    <view class="counter-container">
+      <view class="counterbutton" bindtap="decrement" data-value="Others">-</view>
+      <view class="inputbox">
+        <input class="counter-value" type="number" value="{{Others}}" bindchange="selectOthers"></input><text> 千卡</text>
+      </view>
+      <view class="counterbutton" bindtap="increment" data-value="Others">+</view>
+    </view>
+  </view>
+
+</view>
+
+<view class="addbutton">
+  <button class="button1" bindtap="check">保存</button>
+  <button bindtap="reset">重置</button>
+</view>

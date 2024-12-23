@@ -1,0 +1,33 @@
+/* pages/login/index.wxss */
+page{
+    background-color: rgb(123, 177, 177);
+  } 
+  .login_block{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 650rpx;
+    height: 700rpx;
+    background-color: white;
+    margin: auto;
+    padding: 30rpx;
+    border: 1px solid rgb(202, 201, 201);
+    border-radius: 20px;
+  }
+  .login_block .input{
+      border:none;
+      border-bottom: 1px solid #000000;
+      margin: 25rpx 25rpx;
+  }
+  .login_block .confirm{
+      margin-top: 70rpx;
+      background-color: rgb(123, 177, 177);
+  }
+  .welcome{
+      display: flex;
+      color: azure;
+      justify-content: center;
+      margin-top: 50rpx;
+      margin-bottom: 50rpx;
+  }
+

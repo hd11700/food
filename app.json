@@ -1,0 +1,80 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/news/news",
+        "pages/fridge/fridge",
+        "pages/sign_in/sign_in",
+        "pages/medal/medal",
+        "pages/info/info",
+        "pages/attention/attention",
+        "pages/order/order",
+        "pages/about/about",
+        "pages/interest/interest",
+        "pages/check/check",
+        "pages/notic/notic",
+        "pages/dietitian/dietitian",
+        "pages/put_out/put_out",
+        "pages/works/works",
+        "pages/detail/detail",
+        "pages/drinks/drinks",
+        "pages/post-detail/post-detail",
+        "pages/foodsType/foodsType",
+        "pages/cookType/cookType",
+        "pages/photo/photo",
+        "pages/recipe/recipe",
+        "pages/fooddetail/fooddetail",
+        "pages/food/food",
+        "pages/record/record",
+        "pages/unsign/unsign",
+        "pages/publishrecipe/publishrecipe",
+        "pages/my/my",
+        "pages/me/me",
+        "pages/dailyMemo/deilyMemo",
+        "pages/dailyMemo/dailyMemo",
+        "pages/newMemo/newMemo",
+        "pages/consumption/consumption"
+    ],
+    "tabBar": {
+        "color": "#7A7E83",
+        "selectedColor": "#3cc51f",
+        "borderStyle": "white",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "images/home.png",
+                "selectedIconPath": "images/home.png",
+                "text": "膳行"
+            },
+            {
+                "pagePath": "pages/dailyMemo/dailyMemo",
+                "iconPath": "images/科普.png",
+                "selectedIconPath": "images/科普.png",
+                "text": "膳识"
+            },
+            {
+                "pagePath": "pages/fridge/fridge",
+                "iconPath": "images/icon_component_2.png",
+                "selectedIconPath": "images/icon_component_2.png",
+                "text": "膳食"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "iconPath": "images/icon_component_4.png",
+                "selectedIconPath": "images/icon_component_4.png",
+                "text": "膳余"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#729b89",
+        "navigationBarTitleText": "膳行",
+        "navigationBarTextStyle": "white"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "usingComponents": {
+        "cu-custom": "/colorui/components/cu-custom"
+    }
+}

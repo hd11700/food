@@ -1,0 +1,61 @@
+<view class="page">
+    <!-- 搜索栏 -->
+    <view class='top'>
+        <text></text>
+        <view class='search' bindtap='goSearch'>
+            <image src='/images/search1.png'></image>
+            <input type="text" placeholder='搜点什么' bindconfirm="getsearch"></input>
+        </view>
+
+    </view>
+
+    <!-- 导航条 -->
+    <view class="navBar">
+        <block wx:for="{{tabs}}" wx:key="item">
+            <view id="{{index}}" class="navItem {{tabIndex == index ? 'active' : '' }}" bindtap="onTabClick">
+                <view class="navItemTitle">{{item}}</view>
+            </view>
+        </block>
+        <!-- 样式：短条 -->
+        <view class="navbar-slider" style="left: {{sliderLeft}}px; width:32px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px); transition:all linear .5s;"></view>
+    </view>
+
+    <!-- 内容区域 -->
+    <swiper class="content_wrapper" duration='300' bindtransition="swiperTran" bindanimationfinish="animationfinish" current="{{tabIndex}}" bindchange='swiperChange' data-index='{{tabIndex}}'>
+      <swiper-item class="content_page" >
+            <view class='content'>
+                <view class='content-item' wx:for="{{ ArticleList }}" wx:key="index" catchtap='onPostTap' data-id = "{{item._id}}">
+                    <image src="{{ item.image }}" />
+                    <view class='content-item-text'>
+                        <view class="article-title">{{ item.title }}</view>
+                    </view>
+                </view>
+            </view>
+        </swiper-item>
+
+        <swiper-item class="content_page" style="background:rgb(242, 243, 242);">
+            <view class="type1">
+                <view class="shuoming">食物分类</view>
+                <!-- 分割线 -->
+                <view class="divLine"></view>
+                <view class='foods-type'>
+                    <view class='fitem' wx:for='{{foodsType}}' wx:key='index' bindtap='foodsType' data-mark='{{item.id}}'>
+                        <image src='{{item.imgUrl}}'></image>
+                        <view>{{item.name}}</view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="type2">
+                <view class="shuoming">菜肴分类</view>
+                <!-- 分割线 -->
+                <view class="divLine"></view>
+                <view class='foods-type'>
+                    <view class='fitem' wx:for='{{cookType}}' wx:key='index' bindtap='cookType' data-mark='{{item.id}}'>
+                        <view class="ctext">{{item.name}}</view>
+                    </view>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>

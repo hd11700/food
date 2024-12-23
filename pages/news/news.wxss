@@ -1,0 +1,267 @@
+/*swiper样式覆盖  */
+.content-list {
+  background-color: #fff;
+  z-index: 1;
+  position: relative;
+}
+.list-item {
+  height: 180rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.list-item-content {
+  position: relative;
+  padding: 20rpx 30rpx 20rpx 30rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.list-item-left {
+  height: 140rpx;
+  width: 186rpx;
+  margin-right: 20rpx;
+  float: left;
+}
+.list-item-left image {
+  width: 100%;
+  height: 100%;
+}
+.list-item-right {
+  float: left;
+  width: 484rpx;
+  height: 140rpx;
+  position: relative;
+}
+.article-title {
+  font-size: 34rpx;
+  color: #404040;
+  overflow-y: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.article-source::before {
+  content: '作者:';
+  font-size: 24rpx;
+  color: #888;
+  margin-right: 10rpx;
+}
+.article-source {
+  font-size: 24rpx;
+  color: #888;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.article-editTime {
+  font-size: 24rpx;
+  color: #a8a8a8;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.footer {
+  overflow: hidden;
+}
+.footer-component {
+  margin: 15rpx 0 30rpx;
+}
+.top {
+  background: #729b89;
+  height: 130rpx;
+  position: relative;
+  padding: 1rpx 20rpx;
+  margin-top: -10px ;
+}
+
+
+.top text {
+  display: block;
+  text-align: center;
+  height: 40rpx;
+  font-style: oblique;
+  font-weight: bold;
+  letter-spacing: 2rpx;
+}
+
+.top .search {
+  border: 1px solid fff;
+  box-sizing: border-box;
+  border-radius: 30rpx; 
+  height: 60rpx;
+  padding: 0 20rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 28rpx;
+
+}
+.top .search image {
+  height: 36rpx;
+  width: 36rpx;
+  margin-right: 20rpx;
+}
+.top input {
+  border: none; 
+  flex: 1;
+}
+
+
+/*  
+
+ 2024-1-27添加 
+ 
+  */
+.navBar {
+    display: flex;
+    justify-content: space-around;
+    height: 100rpx;
+    position: relative;
+    background: #fff;
+  }
+  
+  .navItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @keyframes barAnimate{
+    from{
+      background: rgb(26, 27, 27)
+    }
+    to{
+      background: rgba(0, 255, 170, 0.1)
+    }
+  }
+  
+  .navbar-slider{
+    position: absolute;
+    bottom: 0;
+    height: 4rpx;
+    background: greenyellow;
+    animation: barAnimate linear 1s infinite alternate-reverse;
+  }
+  
+  .active {
+    color: green;
+  }
+  
+  .content_wrapper{
+    flex: 1;
+    height: 420px;
+  }
+  
+  .content_page{
+    font-size: 40rpx;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    
+  }
+  /* 2.分类 */
+  .foods-type{
+    background: #fff;
+    padding-top: 20rpx;
+    display: flex;
+    flex-wrap: wrap;
+    /* border-radius: 12rpx; */
+  }
+  .fitem{
+    width: 25%;
+    text-align: center;
+    font-size: 26rpx;
+    color: #666;
+    margin-bottom: 20rpx;
+    font-weight: bold;
+  }
+  .fitem image{
+    width: 74rpx;
+    height: 74rpx;
+  }
+  .shuoming{
+      height: 70rpx;
+      font-size: 35rpx;
+      background-color: rgb(255, 255, 255);
+      margin-top: 20rpx;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bolder;
+      color: rgb(7, 7, 7);
+      font-family:YouYuan;
+      
+  }
+  /*分割线样式*/
+.divLine{
+    background: #E0E3DA;
+    width: 100%;
+    height: 1rpx;
+   }
+.ctext{
+    margin-top: 25rpx;
+    background-color: rgba(220, 224, 220, 0.1);
+    font-size: 30rpx;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    /*设置自动换行  */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+   
+  .content-item {
+    width: 45%;
+    height: 250rpx;
+    /* border: 1px solid white; */
+    margin: 5px;
+    /*这个元素定位了文字才能依靠这个绝对定位  */
+    position: relative;
+  }
+   
+  .content-item image {
+    /* 宽高100%填满每个content-item */
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+   
+  .content-item-text {
+    /*使用绝对定位来做文字重叠到图片的效果  */
+    position: absolute;
+    /*bottom 是以content-item 来定位的  */
+    bottom: 0px;
+    color: white;
+    font-size: 10px;
+    /*生成一个渐变色，黑色由下到上的渐变  */
+    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    /*渐变高度  */
+    height: 125rpx;
+    /*渐变宽度  */
+    width: 98%;
+    /*设置flex显示， flex-direction:排列方式为纵向， justify-content:从底部开始  */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* 设置内边距，注意修改边距时也要修改响应的宽和高 */
+    padding-left: 1%;
+    padding-bottom: 1%;
+    padding-right: 1%;
+    border-radius: 10px;
+
+  }
+
+
+  .home-block {
+    margin-bottom: 20rpx;
+  }
+  
+  .article-title{
+      color: #fff;
+  }
+
+  

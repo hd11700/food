@@ -1,0 +1,93 @@
+<view class="top">
+  <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+    <view class="picker">
+      {{date}}
+    </view>
+  </picker>
+  <view class="cout">共 <span>{{count}}</span> 千卡</view>
+</view>
+
+<view class="contain">
+  <view class="title">
+    <view>饮食摄入</view>
+  </view>
+  <view class="list">
+    <view>牛奶</view>
+    <view class="counter-container">
+      <view class="counterbutton" bindtap="decrement" data-value="Milk">-</view>
+      <view class="counter-value">{{Milk}} 毫升</view>
+      <view class="counterbutton" bindtap="increment" data-value="Milk">+</view>
+    </view>
+  </view>
+
+  <view class="list">
+    <view>蔬菜</view>
+    <view class="counter-container">
+      <view class="counterbutton" bindtap="decrement" data-value="Vegetables">-</view>
+      <view class="counter-value">{{Vegetables}} 克</view>
+      <view class="counterbutton" bindtap="increment" data-value="Vegetables">+</view>
+    </view>
+  </view>
+  <view class="list">
+    <view>水果</view>
+    <view class="counter-container">
+      <view class="counterbutton" bindtap="decrement" data-value="Fruits">-</view>
+      <view class="counter-value">{{Fruits}} 克</view>
+      <view class="counterbutton" bindtap="increment" data-value="Fruits">+</view>
+    </view>
+  </view>
+  <view class="list">
+    <view>谷类</view>
+    <view class="counter-container">
+      <view class="counterbutton" bindtap="decrement" data-value="Grains">-</view>
+      <view class="counter-value">{{Grains}} 克</view>
+      <view class="counterbutton" bindtap="increment" data-value="Grains">+</view>
+    </view>
+  </view>
+  <view class="list">
+    <view>薯类</view>
+    <view class="counter-container">
+      <view class="counterbutton" bindtap="decrement" data-value="Potatoes">-</view>
+      <view class="counter-value">{{Potatoes}} 克</view>
+      <view class="counterbutton" bindtap="increment" data-value="Potatoes">+</view>
+    </view>
+  </view>
+    <view class="list">
+    <view>鱼虾肉类</view>
+    <view class="counter-container">
+      <view class="counterbutton" bindtap="decrement" data-value="Meat">-</view>
+      <view class="counter-value">{{Meat}} 克</view>
+      <view class="counterbutton" bindtap="increment" data-value="Meat">+</view>
+    </view>
+  </view>
+  <view class="list">
+    <view>蛋</view>
+    <view class="counter-container">
+      <view class="counterbutton" bindtap="decrement" data-value="Eggs">-</view>
+      <view class="counter-value">{{Eggs}} 克</view>
+      <view class="counterbutton" bindtap="increment" data-value="Eggs">+</view>
+    </view>
+  </view>
+  <view class="list">
+    <view>大豆坚果</view>
+    <view class="counter-container">
+      <view class="counterbutton" bindtap="decrement" data-value="Soy">-</view>
+      <view class="counter-value">{{Soy}} 克</view>
+      <view class="counterbutton" bindtap="increment" data-value="Soy">+</view>
+    </view>
+  </view>
+  <view class="list">
+    <view>烹调油</view>
+    <view class="counter-container">
+      <view class="counterbutton" bindtap="decrement" data-value="Oil">-</view>
+      <view class="counter-value">{{Oil}} 克</view>
+      <view class="counterbutton" bindtap="increment" data-value="Oil">+</view>
+    </view>
+  </view>
+
+</view>
+
+<view class="addbutton">
+<button class="button1" bindtap="check">保存</button>
+<button bindtap="reset">重置</button>
+</view>

@@ -1,0 +1,26 @@
+<view class="container">
+    <image class="fridge-background" src="https://img0.baidu.com/it/u=1987814742,1500982885&fm=253&fmt=auto&app=138&f=JPEG?w=503&h=500"></image>
+
+    <text class="title">我的冰箱</text>
+    <text class="subtitle">冰箱温度: 4°C</text>
+
+    <view class="rect-container rect-container-reverse"bindtap="gotofood">
+        <image class="rect-icon rect-icon-left" src="/images/p3.png"></image>
+        <text class="rect-text">我的食材</text>
+    </view>
+
+    <view class="rect-container"bindtap="gotoshanbu">
+        <image class="rect-icon rect-icon-right" src="/images/科普1.png"></image>
+        <text class="rect-text">膳食膳补</text>
+    </view>
+
+    <view class="rect-container rect-container-reverse"bindtap="gotopaizhao">
+        <image class="rect-icon rect-icon-left" src="/images/科普2.png"></image>
+        <text class="rect-text">拍照识图</text>
+    </view>
+
+    <view class="rect-container">
+        <image class="rect-icon rect-icon-right" src="/images/p3.png"></image>
+        <text class="rect-text">更多功能</text>
+    </view>
+</view>

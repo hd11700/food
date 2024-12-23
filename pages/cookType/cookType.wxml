@@ -1,0 +1,90 @@
+<!-- 左侧滚动栏 -->
+<view class='total'>
+    <view class='under_line'></view>
+    <view style='float: left' class='left'>
+        <scroll-view scroll-y scroll-with-animation scroll-left="{{scrollLength}}" class='scrollY' style='height: {{winHeight}}px'>
+            <view class='all clear'>
+                <block wx:key="lists" wx:for="{{lists}}">
+                    <view bindtap='jumpIndex' data-menuindex='{{index}}'>
+                        <view class='text-style'>
+                            <text class="{{indexId==index?'active1':''}}">{{item}}</text>
+                            <text class="{{indexId==index?'active':''}}"></text>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </scroll-view>
+    </view>
+
+    <!--右侧栏-->
+    <view class="right">
+        <!--判断indexId值显示不同页面-->
+        <view wx:if="{{indexId==0}}">
+            <scroll-view scroll-y scroll-with-animation scroll-left="{{scrollLength}}" class='scrollY2' style='height: {{winHeight}}px'>
+                <view class='all clear'>
+                    <block wx:key="lists_r0" wx:for="{{lists_r0}}">
+                        <view bindtap='jumpIndexR0' data-menuindex='{{index}}'>
+                            <view class='text-style2'>
+                                <view class='imgbox'>
+                                    <image class="img" src='{{item.imgUrl}}'></image>
+                                </view>
+                                <view class='fonttext'>
+                                    <text class="{{indexIdr0==index?'active2':''}}">{{item.text}}\n营养价值：{{item.text2}}</text>
+                                </view>
+                                <!-- <text class="{{indexIdr0==index?'active3':''}}"></text> -->
+                            </view>
+                            <!-- 分割线 -->
+                            <view class="divLine"></view>
+                        </view>
+                    </block>
+                </view>
+            </scroll-view>
+        </view>
+
+        <view wx:if="{{indexId==1}}">
+            <scroll-view scroll-y scroll-with-animation scroll-left="{{scrollLength}}" class='scrollY2' style='height: {{winHeight}}px'>
+                <view class='all clear'>
+                    <block wx:key="lists_r1" wx:for="{{lists_r1}}">
+                        <view bindtap='jumpIndexR0' data-menuindex='{{index}}'>
+                            <view class='text-style2'>
+                                <view class='imgbox'>
+                                    <image class="img" src='{{item.imgUrl}}'></image>
+                                </view>
+                                <view class='fonttext'>
+                                    <text class="{{indexIdr0==index?'active2':''}}">{{item.text}}\n营养价值：{{item.text2}}</text>
+                                </view>
+                                <!-- <text class="{{indexIdr0==index?'active3':''}}"></text> -->
+                            </view>
+                            <!-- 分割线 -->
+                            <view class="divLine"></view>
+                        </view>
+                    </block>
+                </view>
+            </scroll-view>
+        </view>
+
+
+        <view wx:if="{{indexId==2}}">
+            <scroll-view scroll-y scroll-with-animation scroll-left="{{scrollLength}}" class='scrollY2' style='height: {{winHeight}}px'>
+                <view class='all clear'>
+                    <block wx:key="lists_r2" wx:for="{{lists_r2}}">
+                        <view bindtap='jumpIndexR0' data-menuindex='{{index}}'>
+                            <view class='text-style2'>
+                                <view class='imgbox'>
+                                    <image class="img" src='{{item.imgUrl}}'></image>
+                                </view>
+                                <view class='fonttext'>
+                                    <text class="{{indexIdr0==index?'active2':''}}">{{item.text}}\n营养价值：{{item.text2}}</text>
+                                </view>
+                                <!-- <text class="{{indexIdr0==index?'active3':''}}"></text> -->
+                            </view>
+                            <!-- 分割线 -->
+                            <view class="divLine"></view>
+                        </view>
+                    </block>
+                </view>
+            </scroll-view>
+        </view>
+
+    </view>
+</view>

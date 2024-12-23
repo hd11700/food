@@ -1,0 +1,86 @@
+
+.top{
+  display: flex;
+  width: 100%;
+  padding: 30px 30px 10px 30px;
+  gap: 20px;
+}
+picker{
+  background-color: white;
+  border-radius: 8px;
+  width: 50%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+.cout{
+  background-color: white;
+  border-radius: 8px;
+  width: 50%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+.contain{
+  background-color: white;
+  height: auto;
+  margin:  10px 30px;
+  border-radius: 8px;
+}
+.title{
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.add{
+  font-size: 24px;
+}
+.list{
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  border-top: #f0f0f0 1px solid;
+}
+span{
+  color: red;
+}
+.counter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  padding: 10px 0px;
+  gap: 10px;
+}
+
+.counterbutton {
+  width: 30px;
+  height: 30px;
+  background-color: #729b89;
+  text-align: center;
+  font-size: 24px;
+  line-height: 30px;
+  color: white;
+}
+
+.counter-value {
+  text-align: center;
+  
+}
+.addbutton{
+  margin-top: 20px;
+  display: flex;
+  padding: 0 30px;
+  gap:30px
+}
+.button1{
+  background-color: #729b89;
+}

@@ -1,0 +1,26 @@
+<form bindsubmit="setnode">
+  <view class="title">
+    <view class="title1">
+      <input name="title" placeholder="一个吸引人的标题" style="width: 90%;padding-bottom: 15rpx;" maxlength="15" />
+    </view>
+    <textarea name="detail" placeholder="重要的是分享你的想法..." type="text" maxlength="500" style="word-break: break-all;white-space: pre-wrap;;width: 100%;padding-top: 15rpx;border-top: 1px solid #f5f5f5;"></textarea>
+  </view>
+  <view style="background-color: #ffffff;padding: 30rpx;margin: 25rpx;border-radius: 40rpx;">
+    <label >封面图片：</label>
+    <view class="imageRootAll">
+      <block wx:for="{{imgList}}" wx:key="index">
+        <view class="imgItem">
+          <image class="img" src='{{item}}' mode='aspectFill'></image>
+          <image class="closeImg" bindtap="DeleteImg" src="/images/删除.png" data-index="{{index}}" />
+        </view>
+      </block>
+      <!-- 选择图片按钮 -->
+      <view wx:if="{{imgList.length<1}}" class="imgItem" bindtap="ChooseImage">
+        <image class="photo" src="/images/添加图片.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="publish">
+<button class="out"  form-type="submit">发布</button>
+  </view>
+</form>

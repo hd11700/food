@@ -1,0 +1,27 @@
+<view class="padding-sm">
+  <view class="bg-gradual-blue yinshi">
+    <view class="text-lg">饮食摄入</view>
+    <view class="margin-top-xl text-Abc">{{intake}}卡</view>
+  </view>
+</view>
+<view class="padding-sm">
+  <view class="bg-gradual-pink yinshi">
+    <view class="text-lg">运动消耗</view>
+    <view class="margin-top-xl text-Abc">{{consumption}}卡</view>
+  </view>
+</view>
+
+<button class="cu-btn block  lg bg-gradual-green  shadow-blur" bindtap="tonewMemo">
+  <text class="cuIcon-upload"></text>饮食记录</button>
+
+  <button class="cu-btn block  lg bg-gradual-green  shadow-blur" bindtap="toConsumption">
+  <text class="cuIcon-upload"></text>运动记录</button>
+
+
+<view class="containerbox">
+  <view class="memo">
+  <view>饮食运动记录</view>
+  <span class="smtext">今日未记录</span>
+  </view>
+  <view></view>
+</view>

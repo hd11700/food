@@ -1,0 +1,59 @@
+<view class='header'>
+  <view class='header_textCN'>我的资料</view>
+  <view class='header_textEN'>DIAGNOSTIC ANALYSIS</view>
+</view>
+
+<view class="card_container" bindtap="getUserProfile">
+  <view class='card'>
+    <block wx:if="{{canIUseOpenData}}" calss="userinfo-opendata">
+      <view class='avatar'>
+        <view class='userinfo-avatar'>
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+      </view>
+      <view class='nick'>
+        <open-data type="userNickName"></open-data>
+      </view>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <view class='hasNotUserInfo' wx:if="{{canIUseGetUserProfile}}" bindtap="login"> 点击获取用户信息</view>
+    </block>
+    <block wx:else>
+      <view class='avatar'>
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      </view>
+      <view class='nick'>{{userInfo.nickName}}</view>
+    </block>
+    <view class="header-top-biaoqian">
+      <text wx:if="{{admin}}">营养师</text>
+      <text wx:else>普通用户</text>
+    </view>
+    <view class='body'>阳虚质</view>
+    <view class='body_info'>{{bodyIntroduce}}</view>
+
+
+    </view>
+</view>
+    <!-- <button bindtap="login"> 获取用户信息 </button> -->
+
+
+
+    <view class='button_group'>
+      <view class="button_line">
+        <view class='button' catchtap='clickDetail' hover-class="click">
+          <image src='/images/risk.png'></image>
+        </view>
+        <view class='button' catchtap='clickDrinks' hover-class="click">
+          <image src='/images/diet.png'></image>
+        </view>
+      </view>
+    </view>
+
+    <!-- 列表 -->
+    <view class='mine-menu' wx:for="{{MENU}}" wx:key="index" data-url="{{item.path}}" bindtap="handleMenuNavigation">
+      <view class='menu-left'>
+        <image src="{{item.imgUrl}}" class="menu-image"></image>
+        <text>{{item.title}}</text>
+      </view>
+      <image class="item-image" src="../../images/进入箭头.png" bindtap='handleMenuNavigation'></image>
+    </view>

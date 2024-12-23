@@ -1,0 +1,110 @@
+/* example/label/label.wxss */
+page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    /* border-bottom: 2rpx solid #cdcdcd; */
+  }
+  
+  /* 未选中状态 */
+  .item {
+    display: flex;
+    width: 20%;
+    padding: 20rpx;
+    align-items: center;
+    justify-content: center;
+    color: #cdcdcd;
+  }
+  
+  /* 选中状态 */
+  .active {
+    color: rgb(252, 242, 224);
+    font-weight: bold;
+    background-color: #8bb1a0;
+    border-radius: 50rpx;
+    height: 20rpx;
+  }
+  
+  .navbarList {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #fcf7f7;
+  }
+  
+  /* 商品样式 */
+  .productList {
+    width: 45.5%;
+    height: 410rpx;
+    padding: 10rpx 15rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .productList_boxs {
+    display: flex;
+    width: 340rpx;
+    height:400rpx;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    overflow: hidden;
+  }
+  .goodsImage {
+    width: 350rpx;
+    height: 250rpx;
+    border-radius: 20rpx;
+   
+  }
+  .goodsImage1 {
+    width: 250rpx;
+    height: 250rpx;
+   align-self: center;
+   margin-left: 40rpx;
+  }
+  .goodsImage image {
+    object-fit: cover;
+  }
+  .message {
+    display: flex;
+    width: 88%;
+    flex-direction: column;
+    font-size: 28rpx;
+    padding: 10rpx 20rpx;
+    height: 100rpx;
+    
+  }
+  
+  
+  .level {
+    color: #a8a8a8;
+    padding: 5rpx 0;
+  }
+  
+  .price {
+    color: red;
+    font-size: 28rpx;
+   margin-top: -8rpx;
+  }
+  
+  .fontred {
+    color: red;
+    font-size: 34rpx;
+    font-weight: bold;
+  }
+  .text1{
+    font-size:small;
+    text-align: center;
+    margin-left: 45rpx;
+  }

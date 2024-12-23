@@ -1,0 +1,15 @@
+<!-- 发布 -->
+<view class="section">
+    <image  style="height: 50rpx;width: 50rpx;margin-left: 10rpx;" src="../../images/发布.png"></image>
+    <text>发布</text>
+    <image src="../../images/向右箭头.png" bindtap="goPut_out"></image>
+    </view>
+<view class='line'></view>
+<!-- 作品 -->
+<view class="section">
+    <image style="height: 50rpx;width: 50rpx;margin-left: 10rpx;" src="../../images/作品.png"></image>
+    <text>作品</text>
+    <image src="../../images/向右箭头.png" bindtap="goWorks"></image>
+    </view>
+<view class='line'></view>
+

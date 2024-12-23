@@ -1,0 +1,22 @@
+<view class="welcome">
+<p>欢迎使用营养师模式</p>
+</view>
+<form bindsubmit="formSubmit">
+<view class='login_block' >
+  <view>
+  <input type='text' name='name' placeholder="请输入姓名"  class='input'>
+  </input>
+  </view>
+  <view>
+  <input type='text' name='phone' placeholder="请输入电话" class='input'>
+  </input>
+  </view>
+  <view>
+  <input name='num' placeholder="请输入营养师证书编号" class='input'>
+  </input>
+  </view>
+  <button type='primary' class="confirm" form-type="submit">申请认证</button>
+
+</view>
+</form>
+

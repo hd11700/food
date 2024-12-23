@@ -1,0 +1,60 @@
+<form class="page__bd" bindsubmit="formSubmit" bindreset="formReset">
+  <view class="box">
+    <view class="level nav">
+      <view class='dot'></view>
+      <view class='title'>基本信息</view>
+    </view>
+    <!-- 昵称 -->
+    <view class="section">
+      <text>姓名</text>
+      <input name="name" value="{{userName}}" placeholder="请输入" maxlength="8" />
+    </view>
+    <view class='line'></view>
+    <!-- 年龄 -->
+    <view class="section">
+      <text>年龄</text>
+      <input name="age" value="{{age}}" placeholder="请输入" maxlength="3" />
+    </view>
+    <view class='line'></view>
+    <!-- 性别 -->
+    <view class="section">
+      <text>性别</text>
+      <input name="sex" value="{{sex}}" placeholder="请输入" maxlength="2" />
+    </view>
+    <view class='line'></view>
+    <!-- 身高 -->
+    <view class="section">
+      <text>身高</text>
+      <input name="height" value="{{height}}" placeholder="请输入" maxlength="2" />
+    </view>
+    <view class='line'></view>
+    <!-- 体重 -->
+    <view class="section">
+      <text>体重</text>
+      <input name="weight" value="{{weight}}" placeholder="请输入" maxlength="2" />
+    </view>
+
+<view class="lines"></view>
+  <view class="box">
+    <view class="level nav">
+      <view class='dot'></view>
+      <view class='title'>膳食健康</view>
+    </view>
+
+    <!-- 兴趣喜好 -->
+    <view class="interest">
+      <text>养生喜好</text>
+      <picker mode="selector" range="{{preferences}}" bindchange="goInterest" value="{{selectedIndex}}">
+        <view>
+            {{prefer}}
+        </view></picker>
+    </view>
+  </view>
+  </view>
+
+  <!-- 按钮 -->
+  <view class="btn-area">
+    <button class="button1" form-type="submit" style='width:300rpx'>保存</button>
+    <button class="button2" form-type="reset" style='width:300rpx'>重置</button>
+  </view>
+</form>

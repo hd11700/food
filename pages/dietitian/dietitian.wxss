@@ -1,0 +1,29 @@
+.line{
+    width: 100%;
+    margin-top: 20rpx;
+    border-top:1px #989898 solid;
+    }
+.section{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10rpx;
+    margin-left: 20rpx;
+}
+.im{
+    width: 100rpx;
+    height: 100rpx;
+    margin-left: 10rpx;
+    margin-top: 30rpx;
+}
+.section text{
+    display: flex;
+    margin-top: 20rpx;
+    margin-left: 30rpx;
+} 
+.section image{
+    width: 50rpx;
+    height: 50rpx;
+    display: flex;
+    margin-left: 450rpx;
+    margin-top: 20rpx;
+}

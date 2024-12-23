@@ -1,0 +1,10 @@
+<view class="center">
+<view id="news-List">
+<view class="list-item" wx:for="{{newsList}}" wx:for-item="news">
+<image src="{{news.poster}}"></image>
+<view class="news-title">
+<text bindtap="goToDetail" data-id="{{item.id}}">{{news.title}}——{{news.add_data}}</text>
+</view>
+</view>
+</view>
+</view>

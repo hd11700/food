@@ -1,0 +1,63 @@
+<!--pages/fridge/add/add.wxml-->
+<view class="container">
+  <view class="coverpath">
+    <image src="{{img}}" mode="scaleToFill" bindtap="chooseImg"></image>
+
+    <!-- <image src="../../images/banner_02.png" mode="aspectFill"></image> -->
+  </view>
+
+  </view>
+  <form bindsubmit="formSubmit" >
+  <!-- 记录购买时间 -->
+  <view class="cont">
+    <!-- 记录食物名称 -->
+    <view class="name">
+      <text class="cont_h1">食品</text>
+      <input type="text"  name="foodname" placeholder="输入食物名称" class="input_msg" placeholder-style="font-family:'微软雅黑'" />
+    </view>
+    <!-- 选择食物类别 -->
+ 
+    <view class="type">
+      <label class="cont_h1">类别</label>
+      <picker value="{{type}}" bindchange="bindTypeChange" range="{{types}}" name="type">
+        <view> {{ type ? types[type] : '点击选择'}}</view>
+      </picker>
+    </view>
+    <text class="cont_h1">购买时间</text>
+    <view class="date_time">
+      <view class="date">
+        <image src="../../images/日期.png"></image>
+        <picker mode="date" placeholder="选择日期"  bindchange="bindDateChange">
+          <view>
+            {{date}}
+          </view>
+        </picker>
+      </view>
+      <view class="time">
+        <image src="../../images/time.png"></image>
+        <picker mode="time" placeholder="选择时间" value="{{time}}" start="01:00" end="24:00" bindchange="bindTimeChange">
+          <view>
+            {{time}}
+          </view>
+        </picker>
+
+      </view>
+
+    </view>
+    <view  class="keep">
+      <text class="cont_h1">保质期</text>
+      <input type="text" name="keeptime" placeholder="输入保质期" class="input_msg" placeholder-style="font-family:'微软雅黑'" />
+    </view>
+    <view class="ps">
+    <text class="cont_h1">备注信息</text>
+    <input  type="text" name="ps" style="min-height:32rpx" placeholder="输入备注信息" class="input_msg" placeholder-style="font-family:'微软雅黑'"> </input>
+  </view>
+  <view>
+    <button class="book" form-type="submit" >保存</button>
+    <toast hidden="{{bookToastHidden}}" bindchange="hideToast">
+      保存成功
+    </toast>
+  </view>
+  </view>
+</form>
+

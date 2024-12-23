@@ -1,0 +1,30 @@
+<!--pages/drinks.wxml-->
+<view class="tips"><text>根据您最近的诊断的体质：<text style="color:#3b8686">{{body}}</text> 推荐</text></view>
+<view>
+<view class='lable'>
+<view class="lable_item {{showIndex==0? 'lable_item_selected':''}} "  data-index="0" catchtap="change">1</view>
+<view class="lable_item {{showIndex==1? 'lable_item_selected':''}} "  data-index="1" catchtap="change">2</view>
+<view class="lable_item {{showIndex==2? 'lable_item_selected':''}} "  data-index="2" catchtap="change">3</view>
+</view>
+<view class="drink_image"><image src="{{recommend[showIndex].img}}"></image></view>
+<view class="drink_name">
+<view class="name">{{recommend[showIndex].name}}
+</view>
+<view class="name2">CUSTOMIZED
+</view>
+<view class="name2">HEALTH FOOD
+</view>
+</view>
+
+<view class="drink_info">
+<view class="info">|功效|</view>
+<view  wx:for="{{effect}}">{{item}}</view>
+<view class="info">|热量| {{recommend[showIndex].sell}}卡路里</view>
+<view class="info">|适用人群|</view>
+<view wx:for="{{suitpeople}}">{{item}}</view>
+<view class="info">|制作方法|</view>
+<view wx:for="{{make}}">{{item}}</view>
+<view class="info"> </view>
+</view>
+
+</view>

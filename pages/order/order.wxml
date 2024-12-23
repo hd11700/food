@@ -1,0 +1,31 @@
+<!--导航条-->
+<view class="navbar">
+ <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+<!--笔记-->
+<view hidden="{{currentTab!==0}}">
+  <view class='content' wx:for="{{nodeData}}" wx:key="index">
+        <view class='content-item' >
+            <image src="{{item.image}}" />
+            <view class='content-item-text'>
+                <view class="article-title">{{item.title}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<!--食谱-->
+<view hidden="{{currentTab!==1}}">
+    <view wx:for="{{applyData}}" class="goodsItem" bindtap='gotodetail' data-name="{{item.name}}">
+      <view>{{item.title}}</view>
+      <block >
+        <view class="listItem"  data-name="{{item.name}}">
+          <image src="{{item.img}}" class="img"></image>
+          <view class="name">{{item.name}}</view>
+          <view class="sell">收藏：{{item.sell}}</view>
+          <view class="price">所需食材：{{item.price}}</view>
+        </view>
+      </block>
+    </view>
+
+</view>
+

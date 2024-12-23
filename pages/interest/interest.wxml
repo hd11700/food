@@ -1,0 +1,20 @@
+<!--pages/wxCase/checkbox/index.wxml-->
+  <view class="head">
+    <view>
+      <checkbox checked="{{select_all}}"  bindtap="selectall" />
+    </view>
+    <text>全选</text>
+  </view>
+  <view class="con">
+    <checkbox-group bindchange="checkboxChange">
+      <block wx:for="{{list}}" wx:key="index">
+        <view class="head">
+          <view>
+            <checkbox value="{{item.name}}" checked="{{item.checked}}" />
+          </view>
+          <text>{{item.name}}</text>
+        </view>
+      </block>
+    </checkbox-group>
+    <button class="button1" bindtap="submit" style='width:300rpx'>保存</button>
+  </view>

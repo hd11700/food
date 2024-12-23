@@ -1,0 +1,101 @@
+<!--example/label/label.wxml-->
+<!--导航条-->
+<view class="navbar">
+    <text wx:for="{{navbar}}" wx:key="unique" data-idx="{{index}}" bindtap="navbarTap" class="item {{currentTab==index ? 'active' : ''}}">{{item}}</text>
+</view>
+
+<!--综合-->
+<view hidden="{{currentTab!==0}}" class="navbarList">
+    <!-- 商品列表 -->
+    <view class="productList" wx:for="{{goods}}" wx:key="*this" wx:for-item="lists">
+        <view class="productList_boxs">
+            <view>
+                <image class="goodsImage" src="{{lists.img}}"></image>
+            </view>
+            <view class="message">
+                <view class="goodsName">{{lists.foodname}}</view>
+                <view class="level">购买时间：{{lists.date}}</view>
+                <view class="price">{{lists.end}}天后过期<span class="fontred"></span></view>
+            </view>
+        </view>
+    </view>
+    <view class="productList"bindtap='gotokeep'>
+        <view class="productList_boxs">
+            <view>
+                <image class="goodsImage1" src="/images/添加.png"></image>
+                <view class="text1">添加更多</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<!--主食类-->
+<view hidden="{{currentTab!==1}}" class="navbarList">
+    <view class="productList" wx:for="{{goods}}"  wx:key="index" wx:for-item="lists" wx:if="{{lists.type==='主食类'}}">
+        <view class="productList_boxs">
+            <view>
+                <image class="goodsImage" src="{{lists.img}}"></image>
+            </view>
+            <view class="message">
+                <view class="goodsName">{{lists.foodname}}</view>
+                <view class="level">购买时间：{{lists.date}}</view>
+                <view class="price">{{lists.end}}天后过期<span class="fontred"></span></view>
+            </view>
+        </view>
+    </view>
+    <view class="productList">
+        <view class="productList_boxs">
+            <view>
+                <image class="goodsImage1" src="/images/添加.png"></image>
+                <view class="text1">添加更多</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<!--肉蛋类-->
+<view hidden="{{currentTab!==2}}" class="navbarList">
+    <view class="productList" wx:for="{{goods}}"  wx:key="index" wx:for-item="lists" wx:if="{{lists.type==='肉蛋类'}}">
+        <view class="productList_boxs">
+            <view>
+                <image class="goodsImage" src="{{lists.img}}"></image>
+            </view>
+            <view class="message">
+                <view class="goodsName">{{lists.foodname}}</view>
+                <view class="level">购买时间：{{lists.date}}</view>
+                <view class="price">{{lists.end}}天后过期<span class="fontred"></span></view>
+            </view>
+        </view>
+    </view>
+    <view class="productList">
+        <view class="productList_boxs">
+            <view>
+                <image class="goodsImage1" src="/images/添加.png"></image>
+                <view class="text1">添加更多</view>
+            </view>
+        </view>
+    </view>
+</view>
+<!--果蔬类-->
+<view hidden="{{currentTab!==3}}" class="navbarList">
+    <view class="productList" wx:for="{{goods}}"  wx:key="index" wx:for-item="lists" wx:if="{{lists.type==='果蔬类'}}">
+        <view class="productList_boxs">
+            <view>
+                <image class="goodsImage" src="{{lists.img}}"></image>
+            </view>
+            <view class="message">
+                <view class="goodsName">{{lists.foodname}}</view>
+                <view class="level">购买时间：{{lists.date}}</view>
+                <view class="price">{{lists.end}}天后过期<span class="fontred"></span></view>
+            </view>
+        </view>
+    </view>
+    <view class="productList">
+        <view class="productList_boxs">
+            <view>
+                <image class="goodsImage1" src="/images/添加.png"></image>
+                <view class="text1">添加更多</view>
+            </view>
+        </view>
+    </view>
+</view>

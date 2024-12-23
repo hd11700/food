@@ -1,0 +1,32 @@
+.center{
+  width: 740rpx;height: 640rpx;
+  padding: 5tpx;margin-top: 5rpx;
+  display: flex;
+  flex-direction: column;
+}
+#news-List{
+  min-height: 600rpx;
+  margin-top: 20rpx;
+}
+.list-item{
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid gray;
+}
+.list-item image{
+  width: 230rpx;
+  height: 150rpx;
+  margin: 10rpx;
+}
+.news-title{
+  width: 100%;
+  line-height: 55rpx;
+  font-size: 12pt;
+  align-self: center;
+  /* 溢出文本省略显示 */
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

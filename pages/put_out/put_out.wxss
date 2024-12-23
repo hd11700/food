@@ -1,0 +1,122 @@
+page {
+  background-color: #F3F4F9;
+}
+.fabu {
+  display: flex;
+  float: right;
+  margin-right: 10rpx;
+  color: #A9A9A9;
+  font-size: 40rpx;
+}
+.title_input {
+  width: 100%;
+  border-bottom: 1px solid #DCDCDC;
+  margin: 30rpx;
+}
+.content_input {
+  margin: 30rpx;
+}
+.img_box {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0rpx;
+}
+.img_item_i {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.img_item {
+  width: 210rpx;
+  height: 210rpx;
+  position: relative;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  border: 1px solid #c0ccda;
+}
+.closeImv {
+  position: absolute;
+  right: 0rpx;
+  top: 0rpx;
+  width: 35rpx;
+  height: 35rpx;
+  color: #fff;
+  background-color: red;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30rpx;
+  font-weight: 600;
+}
+
+.imageRootAll {
+  margin: 6rpx;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.imgItem {
+  margin: 6rpx;
+  position: relative;
+  width: 200rpx;
+  height: 200rpx;
+  background: gainsboro;
+  margin-top: 50rpx;
+}
+.img {
+  width: 100%;
+  height: 100%;
+}
+.closeImg {
+  position: absolute;
+  right: 0px;
+  width: 40rpx;
+  height: 40rpx;
+}
+.photo {
+  width: 50%;
+  height: 50%;
+  margin: 25%;
+}
+.out{
+  word-break: keep-all;
+  color: #ffffff;
+  border-radius: 10px;
+  background-color: #729b89;
+  padding: 12rpx 20rpx 12rpx 20rpx;
+  border-radius: 40rpx;
+  font-size: 35rpx;
+  width: 130rpx;
+  height: 70rpx;
+  text-align: center;
+}
+.publish{
+  justify-content: center;
+  display: flex;
+}
+.title{
+  margin: 25rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20rpx;
+  border-radius: 35rpx;
+}
+.title1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+label{
+  font-weight: bold;
+  font-size: 32rpx;
+  margin-left: 5rpx;
+  width: 10rpx;
+  flex: 1; /* 让标签占据剩余空间 */
+  text-shadow: 2px 2px 4px #9ee6c2; /* 水平偏移、垂直偏移、模糊半径、阴影颜色 */
+}

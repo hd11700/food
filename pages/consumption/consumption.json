@@ -1,0 +1,11 @@
+{
+    "usingComponents": {},
+    "permission": {
+      "scope.userLocation": {
+        "desc": "你的位置信息将用于小程序位置接口的效果展示"
+      },
+      "scope.werun": {
+        "desc": "你的微信运动步数将用于小程序步数接口的效果展示"
+      }
+    }
+}

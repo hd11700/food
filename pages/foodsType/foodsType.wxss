@@ -1,0 +1,125 @@
+.under_line{
+    width: 100%;
+    border-top: 1rpx solid #efefef;
+  }
+  
+  .left {
+    border-top: 1rpx solid #efefef;
+    border-right: 1rpx solid #efefef;
+    
+  }
+   
+  .text-style {
+    width: 200rpx;
+    height: 140rpx;
+    line-height: 140rpx;
+    text-align: center;
+    font-size: 34rpx;
+    font-family: PingFangSC-Semibold;
+    color: rgba(51, 51, 51, 1);
+  }
+  
+  
+   
+  /* .active3 {
+    display: block;
+    width: 500rpx;
+    height: 3rpx;
+    background: rgb(226, 226, 226);
+    position: relative;
+    left: 0rpx;
+    bottom: 30rpx;
+  } */
+  
+  .active2 {
+    color: rgb(49, 97, 95);
+  }
+   
+  .active1 {
+    color: #96C158;
+  }
+   
+  .active {
+    display: block;
+    width: 50rpx;
+    height: 6rpx;
+    background: #96C158;
+    position: relative;
+    left: 75rpx;
+    bottom: 30rpx;
+  }
+  
+  .scrollY {
+    width: 210rpx;
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-right: 1rpx solid #efefef;
+    background-color: rgb(247, 247, 247);
+  }
+  
+  .right{
+    border-top: 1rpx solid #efefef;
+    border-left: 1rpx solid  rgba(0,0,0,0.0);
+    margin-left: 2rpx;
+    
+  }
+  
+  .scrollY2 {
+    width: 520rpx;
+    position: fixed;
+    right: 0;
+    top: 0;
+    border-left: 1rpx solid rgba(0,0,0,0);
+    margin-left: 2rpx;
+  }
+  
+  .text-style2 {
+    width: 520rpx;
+    height: 190rpx;
+    line-height: 100rpx;
+    text-align: left;
+    font-size: 34rpx;
+    font-family: PingFangSC-Semibold;
+    color: rgba(51, 51, 51, 1);
+    display:flex;
+  }
+  
+  .button_call{
+    height: 90rpx;
+    width: 90rpx;
+    position: fixed;
+    bottom: 150rpx;
+    right: 13rpx;
+    opacity: 0.7;
+    z-index: 100;
+  }
+ .img {
+    width: 120rpx;
+    height: 120rpx;
+    text-align: center;
+    padding-top: 30rpx;
+  }
+  
+   .img image {
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+  }
+  .fonttext{
+    width: 720rpx;
+    height: 570rpx;
+    margin-left: 60rpx;
+    font-size: 30rpx;
+  }
+  .imgbox{
+    width: 100rpx;
+    height: 100rpx;
+  }
+  .divLine{
+    background: #E0E3DA;
+    width: 100%;
+    height: 1rpx;
+   }
+
+  

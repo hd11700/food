@@ -1,0 +1,45 @@
+<view class='box' wx:if="{{ !isNutritionist }}">
+  <view class='title'>重要通知!</view>
+  <view class='notification'>
+    <text class="text1">此功能仅对营养师开放，若要使用请先完成认证。</text>
+  </view>
+  <button class='button1' bindtap="check">点击认证</button>
+  <text class='ps'>欢迎使用我们的应用程序，请完成认证以获得更多功能。</text>
+</view>
+
+
+<view wx:if="{{ isNutritionist }}">
+  <view class="box">
+    <text class='welcome-message'>欢迎您！亲爱的营养师🎉：{{}}</text>
+    <button class='button1' bindtap="publishArticle">发布文章</button>
+    <button class='button1' bindtap="publishrecipe">发布食谱</button>
+
+  </view>
+  <view class="level nav">
+    <view class='dot'></view>
+    <view class='title2'>我的文章</view>
+  </view>
+  <view class='content' >
+    <view class='content-item'wx:for="{{nodeData}}" wx:key="index">
+      <image src="{{item.image}}" />
+      <view class='content-item-text'>
+        <view class="article-title">{{item.title}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="level nav">
+    <view class='dot'></view>
+    <view class='title2'>我的食谱</view>
+  </view>
+  <view wx:for="{{applyData}}" class="goodsItem" bindtap='gotodetail' data-name="{{item.name}}">
+      <view>{{item.title}}</view>
+      <block >
+        <view class="listItem"  data-name="{{item.name}}">
+          <image src="{{item.img}}" class="img"></image>
+          <view class="name">{{item.name}}</view>
+          <view class="sell">热量：{{item.sell}}</view>
+          <view class="price">所需食材：{{item.price}}</view>
+        </view>
+      </block>
+    </view>
+</view>

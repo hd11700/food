@@ -1,0 +1,105 @@
+/* pages/fridge/add/add.wxss */
+.container{
+   
+  background:#fff;
+  padding:0rpx;
+}
+.coverpath{
+  width:100%;
+  margin:0rpx;
+  padding:0rpx;
+
+}
+.coverpath image{
+  width:100%;
+}
+.picker{
+  width:100%;
+  font-size:30rpx;
+  color:#000;
+  background: #efeff4;
+  margin:0;
+}
+.picker .picker_wrap{
+  width: 670rpx;
+
+  background-size:25rpx 14rpx;
+  background-position:650rpx;
+  border-radius:20rpx;
+  padding:20rpx;
+  margin:20rpx auto;
+}
+.cont{
+  padding:20rpx 60rpx;
+  font-size:30rpx;
+  background: #fff;
+  margin-bottom:40rpx;
+  line-height: 45rpx;
+  color:#666666;
+  
+}
+.cont .cont_h1{
+  font-size: 32rpx;
+  font-weight: 600;
+  line-height: 64rpx;
+  color:#000;
+}
+.date_time{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* 选择器大小 */
+  margin:20rpx 0rpx 20rpx;
+}
+.date_time .date,
+.date_time .time,
+.date_time .keep
+{
+  width:47%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+}
+.date_time .date image,
+.date_time .time image
+{
+  width:40rpx;
+  height:38rpx;
+  
+}
+
+.date_time picker{
+  width:220rpx;
+  height: 60rpx;
+  border:1px solid #ddd;
+  border-radius:8rpx;
+  padding:0rpx 10rpx;
+  margin-left:10rpx;
+}
+.type picker{
+
+  border:1px solid #ddd;
+  border-radius:8rpx;
+  padding: 10rpx;
+  margin:0rpx 0rpx 30rpx;
+  
+}
+.input_msg{
+ 
+  border:1px solid #ddd; 
+  border-radius:8rpx;
+  padding:0rpx 10rpx;
+  margin:0rpx 0rpx 20rpx;
+}
+.book{
+  background:#729b89;
+  font-size: 32rpx;
+  color:#fff;
+  border-radius: 0rpx;
+  margin:40rpx 0rpx 10rpx;
+}
+.keep .ps .name input{
+  margin:0rpx 0rpx 30rpx;
+}

@@ -1,0 +1,23 @@
+<view class="container">
+<image class="image" src="{{arrlylist.img}}"></image>
+
+
+
+<view class="content">
+  <view class='tool'>
+    <view class='cicle-img'>
+      <image catchtap='onCollectionTap' wx:if='{{collected}}' src='/images/sc.jpg'></image>
+      <image catchtap='onCollectionTap' wx:else src='/images/msc.jpg'></image>
+      <image catchtap='onShareTap' class='share-img' src='/images/fx.jpg'></image>
+    </view>
+    <view class='horizon'></view>
+  </view>
+  <view class="title">{{arrlylist.name}}</view>
+  <view class="subtitle">功效：</view>
+  <view wx:for="{{effect}}">{{item}}</view>
+  <view class="subtitle">适用人群：</view>
+  <view wx:for="{{suitpeople}}">{{item}}</view>
+  <view class="subtitle">制作方法：</view>
+  <view class="step" wx:for="{{make}}">{{item}}</view>
+</view>
+</view>

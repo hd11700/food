@@ -1,0 +1,20 @@
+<!-- wxml文件编码原则：
+  先静后动，先样式再数据 -->
+  <view class='container'>
+  <view class='author-date'>
+    <image class='avatar' src='{{postData.img_author}}'></image>
+    <text class='author'>{{postData.author}}</text>
+    <text class='const-text'>发表于</text>
+    <text class='date'>{{postData.dateTime}}</text>
+  </view>
+  <text class='title'>{{postData.title}}</text>
+  <view class='tool'>
+    <view class='cicle-img'>
+      <image catchtap='onCollectionTap' wx:if='{{collected}}' src='/images/sc.jpg'></image>
+      <image catchtap='onCollectionTap' wx:else src='/images/msc.jpg'></image>
+      <image catchtap='onShareTap' class='share-img' src='/images/fx.jpg'></image>
+    </view>
+    <view class='horizon'></view>
+  </view>
+  <text class='detail'>{{postData.detail}}</text>
+</view>

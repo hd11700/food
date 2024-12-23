@@ -1,0 +1,29 @@
+<view class="context">
+<view class="top">
+  <image src="../../images/日历向左.png" bindtap="bindPreMonth"></image>
+  <view>{{year}}年{{month}}月</view>
+  <image src="../../images/日历向右.png" bindtap="bindNextMonth"></image>
+</view>
+<view  class="middle">
+  <view wx:for="{{data_arr}}" wx:key="index" class="middle_num">
+    {{item}}
+  </view>
+</view>
+<view class="calen">
+  <view wx:for="{{startWeek}}" wx:key="index" class="calen_blank"></view>
+  <view wx:for="{{currentMonthDays}}" 
+  class='{{(index+1 == today[0].today ? "active": "calen_num")}}' 
+    wx:key="index">
+  {{index+1}}
+  </view> 
+</view>
+</view>
+<button bindtap="qiandao">点击签到</button>
+<view class="date">
+  <text>已连续签到</text>
+  <view class="num">{{num}}</view>
+  <text>天</text>
+</view>
+<view class="fighting">
+  <text>加油！</text>
+</view>
