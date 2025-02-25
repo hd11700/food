@@ -8,26 +8,64 @@ Page({
     collected:false,
   },
   onLoad(options) {
-    wx.cloud.database().collection('recipe').where({
-      name: options.name
-    }).get().then(res => {
-      try{
-      if(res.data[0].user.includes(app.getOpenid())){
-        this.setData({
-          collected: true
+
+console.log(options.name)
+let that=this
+wx.request({
+  url: 'http://localhost:8080/api/recipes',
+  method: 'GET',
+  success: function(res) {
+    console.log(res.data);
+    for(let i=0;i<res.data.length;i++) {
+      if(res.data[i].name==options.name){
+        that.setData({
+          arrlylist:res.data[i]
         })
+        console.log(that.data.arrlylist)
+        break
       }
-    }catch(error){
-      console.log(error)
-    }
-      this.setData({
-        arrlylist: res.data[0],
-        effect:res.data[0].effect.split('。'),
-        suitpeople:res.data[0].suitpeople.split('。'),
-        make:res.data[0].make.split('。')
-      })
-    })
+    }     
+
+  }
+  })
+
+
+    // wx.cloud.database().collection('recipe').where({
+    //   name: options.name
+    // }).get().then(res => {
+    //   try{
+    //   if(res.data[0].user.includes(app.getOpenid())){
+    //     this.setData({
+    //       collected: true
+    //     })
+    //   }
+    // }catch(error){
+    //   console.log(error)
+    // }
+    //   this.setData({
+    //     arrlylist: res.data[0],
+    //     effect:res.data[0].effect.split('。'),
+    //     suitpeople:res.data[0].suitpeople.split('。'),
+    //     make:res.data[0].make.split('。')
+    //   })
+    // })
+
+
   },
+
+  getApplyData(){
+    let that=this
+    wx.request({
+      url: 'http://localhost:8080/api/recipes',
+      method: 'GET',
+      success: function(res) {
+        console.log(res.data);      
+
+      }
+      })
+},
+
+
    // 点击收藏按钮
    onCollectionTap: function() {
      if(!app.getOpenid()){

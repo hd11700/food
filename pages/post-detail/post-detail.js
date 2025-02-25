@@ -1,81 +1,72 @@
-// 定义一个变量来接受 posts_data.js文件输出的对象
-// 注意：require 只能使用相对路径！
-var postsData = require('../../data/posts-data.js')
-// var postsData = require('../../utils/posts-data.js')
 var app = getApp();
 Page({
   data: {
-    id:'',
-    collected:false
+    id: '',
+    collected: false,
+    postData: []
   },
 
-  onLoad: function(option) {
-    // 接收post.js传进来的id值。
-    var Id = option.id;
-// db.collection('node').doc(Id).get().then(res=>{
-//   try{
-//     if(res.data.user.includes(app.getOpenid())){
-//       this.setData({
-//         collected: true
-//       })
-//     }
-//   }catch(error){
-//     console.log("错",error)
-//   }
-//   this.setData(
-//     {
-//       postData:res.data,
-//       id:option.id
-//     },
-//   )
-// })
+  onLoad: function (option) {
+    var id = option.id - 1;
+    let that = this;
 
+    wx.request({
+      url: 'http://localhost:8080/news',
+      method: 'GET',
+      success: function (res) {
+        that.setData({
+          postData: res.data.data[id]
+        })
+      }
+    })
+    const exists = app.globalData.fvnews.some(item => item === id+1);
+    this.setData({
+      collected:exists
+    })
 
   },
 
 
 
   // 点击收藏按钮
-  onCollectionTap: function(event) {
-    if(!app.getOpenid()){
+  onCollectionTap: function (event) {
+    if (!app.getOpenid()) {
       this.login()
       return
-      }
-     // 更新数据绑定变量，实现切换图片
-     let postCollected=!this.data.collected
-     this.setData({
-         collected: postCollected
-       }),
-       // 收藏成功提示
-       wx.showToast({
-         title: postCollected ? '收藏成功' : '取消成功',
-         // 设置出现时间长度
-         duration: 1000,
-         // 设置出现图标
-         icon: 'success',
-       })
-      //  if(this.data.collected){
-      //    console.log(app.getOpenid())
-      //    db.collection('node').doc(this.data.id).update({
-      //      data:{
-      //        user:_.push(app.getOpenid())
-      //      }
-      //    })
-      //  }else{
-      //    db.collection('node').doc(this.data.id).update({
-      //      data:{
-      //        user: _.pull(app.getOpenid())
-      //      }
-      //    })
-      //  }
+    }
+    // 更新数据绑定变量，实现切换图片
+    let postCollected = !this.data.collected
+    this.setData({
+        collected: postCollected
+      }),
+      // 收藏成功提示
+      wx.showToast({
+        title: postCollected ? '收藏成功' : '取消成功',
+        // 设置出现时间长度
+        duration: 1000,
+        // 设置出现图标
+        icon: 'success',
+      })
+
+        const newValue = this.data.postData.id;
+        const array = app.globalData.fvnews;
+        const exists = array.some(item => item === newValue);
+
+        if (!exists) {
+          app.globalData.fvnews.push(newValue);
+        }
+        else{
+          app.globalData.fvnews = array.filter(item => item !== newValue);
+        }
+        console.log(app.getFavoritesNews())
   },
 
   // 异步
-  getPostsCollectedAsy: function() {
+  getPostsCollectedAsy: function () {
     var that = this;
     wx.getStorage({
       key: 'posts_collected',
-      success: function(res) {
+      success: function (res) {
         var postsCollected = res.data;
         var postCollected = postsCollected[that.data.currentPostId];
         // 收藏变成未收藏，未收藏变成收藏
@@ -87,7 +78,7 @@ Page({
   },
 
   // 同步
-  getPostsCollectedSyc: function() {
+  getPostsCollectedSyc: function () {
     var postsCollected = wx.getStorageSync('posts_collected');
     var postCollected = postsCollected[this.data.currentPostId];
     // 收藏变成未收藏，未收藏变成收藏
@@ -97,7 +88,7 @@ Page({
   },
 
 
-  showModal: function(postCollected, postsCollected) {
+  showModal: function (postCollected, postsCollected) {
     var that = this;
     wx.showModal({
       title: '收藏',
@@ -107,7 +98,7 @@ Page({
       cancelColor: '#333',
       confirmText: '确认',
       confirmColor: '#405f80',
-      success: function(res) {
+      success: function (res) {
         if (res.confirm) {
           // 更新文章的缓存值
           wx.setStorageSync('posts_collected', postsCollected);
@@ -121,7 +112,7 @@ Page({
   },
 
 
-  showToast: function(postCollected, postsCollected) {
+  showToast: function (postCollected, postsCollected) {
     // 更新文章的缓存值
     wx.setStorageSync('posts_collected', postsCollected);
     // 更新数据绑定变量，实现切换图片
@@ -140,7 +131,7 @@ Page({
 
 
   // 分享按钮点击事件
-  onShareTap: function(event) {
+  onShareTap: function (event) {
     var itemList = [
       "分享给微信好友",
       "分享到朋友圈",
@@ -151,7 +142,7 @@ Page({
       itemList: itemList,
       // 设置字体颜色
       itemColor: "405f80",
-      success: function(res) {
+      success: function (res) {
         // res.cancel 用户是不是点击了取消
         // res.tapIndex 数组元素的序号，从0开始
         wx.showModal({

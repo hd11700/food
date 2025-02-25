@@ -1,5 +1,7 @@
 App({
-  globalData: {},
+  globalData: {
+    fvnews:[1]
+  },
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
@@ -51,6 +53,9 @@ App({
   },
   getSession(){
     return this.globalData.session_key
+  },
+  getFavoritesNews(){
+    return this.globalData.fvnews
   },
   /**
    * 当小程序启动，或从后台进入前台显示，会触发 onShow

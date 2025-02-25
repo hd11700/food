@@ -22,10 +22,10 @@
 
     <!-- 内容区域 -->
     <swiper class="content_wrapper" duration='300' bindtransition="swiperTran" bindanimationfinish="animationfinish" current="{{tabIndex}}" bindchange='swiperChange' data-index='{{tabIndex}}'>
-      <swiper-item class="content_page" >
+      <swiper-item class="content_page" > 
             <view class='content'>
-                <view class='content-item' wx:for="{{ ArticleList }}" wx:key="index" catchtap='onPostTap' data-id = "{{item._id}}">
-                    <image src="{{ item.image }}" />
+                <view class='content-item' wx:for="{{ ArticleList.data }}" wx:key="index" catchtap='onPostTap' data-id = "{{item.id}}">
+                    <image src="{{ item.img }}" />
                     <view class='content-item-text'>
                         <view class="article-title">{{ item.title }}</view>
                     </view>

@@ -14,14 +14,24 @@
 <button class="cu-btn block  lg bg-gradual-green  shadow-blur" bindtap="tonewMemo">
   <text class="cuIcon-upload"></text>饮食记录</button>
 
-  <button class="cu-btn block  lg bg-gradual-green  shadow-blur" bindtap="toConsumption">
+<button class="cu-btn block  lg bg-gradual-green  shadow-blur" bindtap="toConsumption">
   <text class="cuIcon-upload"></text>运动记录</button>
 
 
 <view class="containerbox">
   <view class="memo">
-  <view>饮食运动记录</view>
-  <span class="smtext">今日未记录</span>
+    <view>饮食运动记录</view>
+    <span class="smtext">今日未记录</span>
   </view>
   <view></view>
+</view>
+
+<view class="node" wx:for="{{oldMemo}}">
+  <view>{{item.Consumption.timestamp}}</view>
+  <view class="calories">
+    <span class="eatcal">{{item.Intake.intake}}</span>
+    <span>/</span>
+    <span class="sporrtcal">{{item.Consumption.consumption}}</span>
+    <span class="qianka">千卡</span>
+  </view>
 </view>

@@ -1,5 +1,5 @@
 <view class="container">
-<image class="image" src="{{arrlylist.img}}"></image>
+<image class="image" src="{{arrlylist.imageUrl}}" mode="aspectFit"></image>
 
 
 
@@ -14,10 +14,10 @@
   </view>
   <view class="title">{{arrlylist.name}}</view>
   <view class="subtitle">功效：</view>
-  <view wx:for="{{effect}}">{{item}}</view>
+  <view>{{arrlylist.effect}}</view>
   <view class="subtitle">适用人群：</view>
-  <view wx:for="{{suitpeople}}">{{item}}</view>
+  <view >{{arrlylist.suitpeople}}</view>
   <view class="subtitle">制作方法：</view>
-  <view class="step" wx:for="{{make}}">{{item}}</view>
+  <view class="step" >{{arrlylist.make}}</view>
 </view>
 </view>

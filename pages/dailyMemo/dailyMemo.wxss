@@ -21,3 +21,31 @@
   font-size: 14px;
   color: #a0a0a0;
 }
+.node{
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:10rpx 60rpx;
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px 10px;
+}
+.node span{
+  font-size: 24px;
+  margin-right: 8px;
+  font-weight: 500;
+}
+.calories{
+  gap: 10px;
+}
+.eatcal{
+  color: #ce4d4d;
+}
+.sporrtcal{
+  color: #06b371;
+}
+.qianka{
+  font-size: 16px !important;
+  color: #a0a0a0;
+}

@@ -4,6 +4,7 @@ Page({
   data: {
     intake: 0,
     consumption: 0,
+    oldMemo:[]
   },
 
   onLoad(options) {
@@ -70,8 +71,18 @@ Page({
         })
       }
     })
-
-
+    wx.request({
+      url: 'http://localhost:8080/AllnewMemo',
+      method: 'GET',
+      data: {
+        openid: this.data.openid
+      },
+      success: (res) =>  {
+        this.setData({
+          oldMemo:res.data.data
+        })
+      }
+    })
   },
 
   getWeRunData: function () {

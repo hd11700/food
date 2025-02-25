@@ -50,8 +50,14 @@
                 "pagePath": "pages/dailyMemo/dailyMemo",
                 "iconPath": "images/科普.png",
                 "selectedIconPath": "images/科普.png",
-                "text": "膳识"
+                "text": "膳记"
             },
+            {
+              "pagePath": "pages/news/news",
+              "iconPath": "images/科普.png",
+              "selectedIconPath": "images/科普.png",
+              "text": "膳识"
+          },
             {
                 "pagePath": "pages/fridge/fridge",
                 "iconPath": "images/icon_component_2.png",

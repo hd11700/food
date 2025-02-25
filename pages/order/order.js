@@ -16,22 +16,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // db.collection('node').where({
-    //   user:_.eq(app.getOpenid())
-    // }).get().then(res=>{
-    //   console.log(res.data)
-    //   this.setData({
-    //     nodeData:res.data
-    //   })
-    // })
-    // db.collection('recipe').where({
-    //   user:_.eq(app.getOpenid())
-    // }).get().then(res =>{
-    //   console.log(res.data)
-    //   this.setData({
-    //     applyData:res.data
-    //   })
-    // })
+    var that=this;
+    wx.request({
+      url: 'http://localhost:8080/news',
+      method: 'GET',
+      success: function (res) {
+        let list=[]
+        for (let i = 0; i < app.globalData.fvnews.length; i++) {
+          list.push(res.data.data[app.globalData.fvnews[i]-1]);
+        }
+        that.setData({
+          nodeData: list
+        })
+      }
+    })
+    
   },
   gotodetail:function(e){
     wx.navigateTo({
@@ -39,5 +38,15 @@ Page({
     })
 
 },
+  //  打开新闻详情页事件
+  onPostTap: function (event) {
+    // 获取新闻的postId
+    var id = event.currentTarget.dataset.id;
+    // 跳转到子页面，新闻详情界面
+    wx.navigateTo({
+      // 将新闻块的postid穿进去
+      url: '../post-detail/post-detail?id=' + id,
+    })
+  },
 
 })

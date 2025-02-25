@@ -25,7 +25,7 @@
       <view>{{itemNames.title}}</view>
       <block wx:for="{{itemNames.list}}" wx:for-item="itemName" wx:for-index="idx" wx:key="idx">
         <view class="listItem" bindtap='gotodetail' data-name="{{itemName.name}}">
-          <image src="{{itemName.img}}" class="img"></image>
+          <image src="{{itemName.imageUrl}}" class="img"></image>
           <view class="name">{{itemName.name}}</view>
           <view class="sell">热量：{{itemName.calories}}卡</view>
           <view class="price">所需食材：{{itemName.ingredients}}</view>

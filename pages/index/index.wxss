@@ -191,6 +191,7 @@
     left:20rpx;
     font-size: 52rpx;
     color: #e8cc9c;
+    z-index: 2;
   }
   .weather_image image{
     width: 200rpx;
@@ -211,6 +212,8 @@
   font-size: 24rpx;
   text-align: left;
   opacity: 0.8;
+  color: #000;
+  z-index: 2;
   }
   .tips_image{
     display: inline-block;
