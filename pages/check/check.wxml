@@ -2,7 +2,7 @@
 <p>欢迎使用营养师模式</p>
 </view>
 <form bindsubmit="formSubmit">
-<view class='login_block' >
+<view class='login_block' wx:if="{{chat}}">
   <view>
   <input type='text' name='name' placeholder="请输入姓名"  class='input'>
   </input>
@@ -15,8 +15,17 @@
   <input name='num' placeholder="请输入营养师证书编号" class='input'>
   </input>
   </view>
+  <view>
+  <input name='userid' placeholder="请设置登录账号" class='input'>
+  </input>
+  </view>
+  <view>
+  <input name='password' placeholder="请设置登录密码" class='input'>
+  </input>
+  </view>
   <button type='primary' class="confirm" form-type="submit">申请认证</button>
-
 </view>
+<view class='login_block' wx:else>
+<button type='primary' class='chating confirm'>已提交申请</button></view>
 </form>
 

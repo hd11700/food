@@ -16,7 +16,7 @@ Page({
           id: 2,
           imgUrl: "../../images/icon_mine_diet.png",
           title: "营养师",
-          path: "../notic/notic",
+          path: "../check/check",
         },
         {
           id: 3,

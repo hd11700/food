@@ -30,4 +30,8 @@ page{
       margin-top: 50rpx;
       margin-bottom: 50rpx;
   }
-
+.chating{
+  font-size: 24px;
+  text-align: center;
+  color:rgb(8, 46, 172);
+}

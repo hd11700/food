@@ -4,6 +4,7 @@ Page({
     num_input: "",
     usr: "admin",
     key: "123456",
+    chat:true
   },
   confirmNum: function () {
     var usr = this.data.user_input;
@@ -48,21 +49,25 @@ Page({
       })
       return
     }
-    // db.collection('dietitian').add({
-    //   data: {
-    //     openid: app.getOpenid(),
-    //     name:e.detail.value.name,
-    //     num:e.detail.value.num,
-    //     phone:e.detail.value.phone,
-    //     using:false
-    //   }
-    // }).then(res=>{
-    //   wx.showToast({
-    //     title: '已提交',
-    //     icon: 'true',
-    //     duration: 2000
-    //   })
-    // })
+    //申请营养师
+    wx.request({
+      url: 'http://localhost:8080/system/user',
+      method: 'post',
+      data:{
+        deptId: 200,
+        nickName:e.detail.value.name,
+        userName:e.detail.value.userid,
+        password:e.detail.value.password,
+        phonenumber:e.detail.value.phone,
+        remark:e.detail.value.num,
+        status:1
+
+      },
+      success: function(res) {
+        console.log(res.data)
+      }
+      })
+
   }
 
 
