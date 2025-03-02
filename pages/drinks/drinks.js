@@ -1,3 +1,4 @@
+const app = getApp()
 Page({
   data: {
     body: "阴虚质",
@@ -6,20 +7,22 @@ Page({
     effect:[],
     suitpeople:[],
     make:[],
+    prefer:''
   },
 
   onLoad: function () {
-    this.applyData()
-    
+    this.data.openid = app.getOpenid()
+    this.getUser()
+
+    if(this.data.prefer){
     wx.showModal({
         title: '膳食膳行',
-        content: '请设置你的体质信息，方便系统为你推荐合理膳食',
+        content: '请设置你的信息，方便系统为你推荐合理膳食',
         showCancel: true,
         confirmText: '前往设置',
         success: function (res) {
             if (res.confirm) {
-                // 点击确认按钮后的操作
-                // 可以跳转到食谱详情页面或者其他相关页面
+
                 wx.navigateTo({
                     url: '/pages/info/info' // 跳转到食谱详情页面
                   });
@@ -28,6 +31,35 @@ Page({
               }
         }
     });
+  }
+  },
+  getUser(){
+    let that=this
+    const url=`http://localhost:8080/system/user/info/${this.data.openid}`;
+    wx.request({
+      url: url,
+      method: 'GET',
+      success: function(res) {
+        console.log(res.data)
+        that.setData({
+          prefer: res.data.data.preferences,
+        })
+        let prefer=res.data.data.preferences
+        wx.request({
+          url: 'http://localhost:8080/api/recipes',
+          method: 'GET',
+          success: function(res) {
+            const filteredData = res.data.filter(item => item.suitpeople === prefer);
+            const shuffledData = filteredData.sort(() => 0.5 - Math.random());
+            const randomSelectedData = shuffledData.slice(0, 3);
+            that.setData({
+              recommend:randomSelectedData
+            })
+          }
+        })
+      }
+      })
+      
   },
   applyData() {
     wx.cloud.database().collection('recipe').get().then(res => {

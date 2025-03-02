@@ -8,9 +8,13 @@ Page({
     collected:false,
   },
   onLoad(options) {
-
-console.log(options.name)
 let that=this
+let array=app.getFavoritesRecipes()
+ const exists = array.some(item => item === options.name);
+ that.setData({
+  collected:exists
+ })
+
 wx.request({
   url: 'http://localhost:8080/api/recipes',
   method: 'GET',
@@ -28,28 +32,6 @@ wx.request({
 
   }
   })
-
-
-    // wx.cloud.database().collection('recipe').where({
-    //   name: options.name
-    // }).get().then(res => {
-    //   try{
-    //   if(res.data[0].user.includes(app.getOpenid())){
-    //     this.setData({
-    //       collected: true
-    //     })
-    //   }
-    // }catch(error){
-    //   console.log(error)
-    // }
-    //   this.setData({
-    //     arrlylist: res.data[0],
-    //     effect:res.data[0].effect.split('。'),
-    //     suitpeople:res.data[0].suitpeople.split('。'),
-    //     make:res.data[0].make.split('。')
-    //   })
-    // })
-
 
   },
 
@@ -85,20 +67,18 @@ wx.request({
         // 设置出现图标
         icon: 'success',
       })
-      // if(this.data.collected){
-      //   console.log(app.getOpenid())
-      //   db.collection('recipe').doc(this.data.arrlylist._id).update({
-      //     data:{
-      //       user:_.push(app.getOpenid())
-      //     }
-      //   })
-      // }else{
-      //   db.collection('recipe').doc(this.data.arrlylist._id).update({
-      //     data:{
-      //       user: _.pull(app.getOpenid())
-      //     }
-      //   })
-      // }
+
+      const name = this.data.arrlylist.name;
+      const array = app.globalData.recipes;
+      const exists = array.some(item => item === name);
+
+      if (!exists) {
+        app.globalData.recipes.push(name);
+      }
+      else{
+        app.globalData.recipes = array.filter(item => item !== name);
+      }
+      console.log(app.getFavoritesRecipes())
   },
 
 

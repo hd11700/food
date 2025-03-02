@@ -19,10 +19,10 @@
     <view>{{item.title}}</view>
     <block>
       <view class="listItem" data-name="{{item.name}}">
-        <image src="{{item.img}}" class="img"></image>
+        <image src="{{item.imageUrl}}" class="img"></image>
         <view class="name">{{item.name}}</view>
-        <view class="sell">收藏：{{item.sell}}</view>
-        <view class="price">所需食材：{{item.price}}</view>
+        <view class="sell">热量：{{item.calories}}</view>
+        <view class="price">所需食材：{{item.ingredients}}</view>
       </view>
     </block>
   </view>

@@ -43,7 +43,8 @@ Page({
       hasUserInfo: false, 
       canIUse: wx.canIUse('button.open-type.getUserInfo'),
       canIUseGetUserProfile: false,
-      canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
+      canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'),
+      prefer:''
     },
   
     /**
@@ -51,24 +52,31 @@ Page({
      */
     onLoad: function (options) {
       let user = wx.getStorageSync('user')
-      // db.collection('dietitian').where({
-      //   _openid:app.getOpenid()
-      // }).get().then(res=>{
-      //   console.log(res)
-      //   if(res.data[0].using){
-          // this.setData({
-          //   admin:res.data[0].using
-          // })
-      //   }
-      // })
-      // this.setData({
-      //   userInfo: user
-      // })
-      this.login()
-    },
-    login() {
 
-  },
+      this.data.openid = app.getOpenid()
+      this.getUser()
+    },
+
+  
+    getUser(){
+      let that=this
+      const url=`http://localhost:8080/system/user/info/${this.data.openid}`;
+      wx.request({
+        url: url,
+        method: 'GET',
+        success: function(res) {
+          console.log(res.data)
+          that.setData({
+            userName: res.data.data.userName,
+            sex: res.data.data.sex,
+            age: res.data.data.age,
+            height: res.data.data.height,
+            weight: res.data.data.weight,
+            prefer: res.data.data.preferences,
+          })
+        }
+        })
+    },
   // 退出登录
   loginOut(){
       this.setData({ 

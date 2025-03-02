@@ -25,9 +25,8 @@ Page({
   },
 
   onLoad() {
-
+    
     let that = this;
-
     wx.request({
       url: 'http://localhost:8080/news',
       method: 'GET',
@@ -38,13 +37,6 @@ Page({
         })
       }
     })
-
-    this.setData(
-      // 替换发现前端的数据
-      {
-        posts_key: postsData.postList
-      }
-    );
 
 
     // 计算

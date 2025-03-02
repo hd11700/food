@@ -28,7 +28,7 @@
       <text wx:if="{{admin}}">营养师</text>
       <text wx:else>普通用户</text>
     </view>
-    <view class='body'>阳虚质</view>
+    <view class='body'>{{prefer}}</view>
     <view class='body_info'>{{bodyIntroduce}}</view>
 
 

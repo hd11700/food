@@ -30,6 +30,17 @@ Page({
         })
       }
     })
+    let prefer=app.getFavoritesRecipes()
+    wx.request({
+      url: 'http://localhost:8080/api/recipes',
+      method: 'GET',
+      success: function(res) {
+        const filteredData = res.data.filter(item => prefer.includes(item.name));
+        that.setData({
+          applyData:filteredData
+        })
+      }
+    })
     
   },
   gotodetail:function(e){

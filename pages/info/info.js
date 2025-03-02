@@ -22,48 +22,7 @@ Page({
   //表单提交按钮
   formSubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    // if (!e.detail.value.name) {
-    //   wx.showToast({
-    //     title: '姓名不能为空',
-    //     icon: 'none',
-    //   });
-    //   return;
-    // }
-    // if (!e.detail.value.age) {
-    //   wx.showToast({
-    //     title: '年龄不能为空',
-    //     icon: 'none',
-    //   });
-    //   return;
-    // }
-    // if (!e.detail.value.sex) {
-    //   wx.showToast({
-    //     title: '性别不能为空',
-    //     icon: 'none',
-    //   });
-    //   return;
-    // }
-    // if (!e.detail.value.height) {
-    //   wx.showToast({
-    //     title: '身高不能为空',
-    //     icon: 'none',
-    //   });
-    //   return;
-    // }
-    // if (!e.detail.value.weight) {
-    //   wx.showToast({
-    //     title: '体重不能为空',
-    //     icon: 'none',
-    //   });
-    //   return;
-    // }
-    // if (this.data.selectedIndex==0) {
-    //   wx.showToast({
-    //     title: '请选择养生喜好',
-    //     icon: 'none',
-    //   });
-    //   return;
-    // }
+
     wx.request({
       url: 'http://localhost:8080/system/user/update',
       method: 'PUT',

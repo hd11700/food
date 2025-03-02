@@ -55,6 +55,7 @@ Page({
       method: 'post',
       data:{
         deptId: 200,
+        roleIds:[100],
         nickName:e.detail.value.name,
         userName:e.detail.value.userid,
         password:e.detail.value.password,
