@@ -35,6 +35,8 @@ page {
   .navbarList {
     width: 100%;
     display: flex;
+    padding: 10px;
+    justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
     background-color: #fcf7f7;
@@ -42,7 +44,7 @@ page {
   
   /* 商品样式 */
   .productList {
-    width: 45.5%;
+    width: 50%;
     height: 410rpx;
     padding: 10rpx 15rpx;
     display: flex;

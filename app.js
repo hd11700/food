@@ -35,7 +35,6 @@ App({
       url: 'http://localhost:8080/api/recipes',
       method: 'GET',
       success: function(res) {
-        console.log(res.data)
       }
       })
 

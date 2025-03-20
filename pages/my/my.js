@@ -54,6 +54,7 @@ Page({
       let user = wx.getStorageSync('user')
 
       this.data.openid = app.getOpenid()
+      console.log(this.data.openid)
       this.getUser()
     },
 

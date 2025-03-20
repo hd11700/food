@@ -4,7 +4,16 @@ Page({
   data: {
     intake: 0,
     consumption: 0,
-    oldMemo:[]
+    oldMemo: [],
+    date: '',
+    count: 0,
+    step: 0,
+    Running: 0,
+    Hiking: 0,
+    Cycling: 0,
+    Jumping: 0,
+    Swimming: 0,
+    Others: 0,
   },
 
   onLoad(options) {
@@ -17,7 +26,7 @@ Page({
         openid: this.data.openid,
         timestamp: timestamp
       },
-      success: (res) =>  {
+      success: (res) => {
         console.log(res.data)
         wx.setStorage({
           key: "Consumption",
@@ -37,9 +46,9 @@ Page({
         // 检查 Consumption 数组是否有数据
         if (consumptionData && consumptionData.length > 0) {
           app.globalData.consumption = consumptionData[0].consumption;
-        }else{
-           // 检查用户是否授权
-           wx.getSetting({
+        } else {
+          // 检查用户是否授权
+          wx.getSetting({
             success: (res) => {
               if (!res.authSetting['scope.werun']) {
                 // 请求授权
@@ -62,8 +71,10 @@ Page({
                 // 已经授权，直接获取步数
                 this.getWeRunData();
               }
+
             }
           });
+
         }
         this.setData({
           intake: app.getIntake(),
@@ -71,20 +82,46 @@ Page({
         })
       }
     })
+    setTimeout(() => {
+      wx.request({
+        url: 'http://localhost:8080/AllnewMemo',
+        method: 'GET',
+        data: {
+          openid: this.data.openid
+        },
+        success: (res) => {
+          console.log(res.data.data);
+          this.setData({
+            oldMemo: res.data.data
+          });
+        }
+      });
+    }, 1500);
+  },
+  check() {
+    let openid = app.getOpenid()
+    app.globalData.consumption = this.data.count
+    let timestamp = new Date().toISOString().split('T')[0]
     wx.request({
-      url: 'http://localhost:8080/AllnewMemo',
-      method: 'GET',
+      url: 'http://localhost:8080/consumption',
+      method: 'POST',
       data: {
-        openid: this.data.openid
+        openid: openid,
+        consumption: this.data.consumption,
+        step: this.data.step,
+        running: this.data.Running,
+        hiking: this.data.Hiking,
+        cycling: this.data.Cycling,
+        jumping: this.data.Jumping,
+        swimming: this.data.Swimming,
+        others: this.data.Others,
+        timestamp: timestamp
       },
-      success: (res) =>  {
-        this.setData({
-          oldMemo:res.data.data
-        })
+      success: function (res) {
+        
       }
     })
   },
-
   getWeRunData: function () {
     const that = this;
     wx.getWeRunData({
@@ -93,7 +130,7 @@ Page({
         const iv = res.iv;
         const sessionKey = app.getSession()
         wx.request({
-          url: 'http://localhost:8080/api/decryptWeRunData', 
+          url: 'http://localhost:8080/api/decryptWeRunData',
           method: 'POST',
           data: {
             encryptedData: encryptedData,
@@ -103,10 +140,13 @@ Page({
           success(response) {
             let step = response.data.data.stepInfoList[response.data.data.stepInfoList.length - 1].step
             let count = Number(step) / 20
+            app.globalData.consumption = count;
             that.setData({
               consumption: count
             })
+          that.check()
           }
+
         });
       }
     });

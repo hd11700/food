@@ -54,11 +54,27 @@ Page({
       })
       return
     }
-    // this.setData({
-    //   bookToastHidden: false
-    // })
-    const openid = app.getOpenid()
 
+   const newItem={
+    foodname:e.detail.value.foodname,
+    keeptime:e.detail.value.keeptime,
+    type:this.data.types[e.detail.value.type],
+    ps:e.detail.value.ps,
+    date:this.data.date,
+    img:this.data.img
+  }
+// 获取页面栈
+const pages = getCurrentPages();
+// 获取上一个页面
+const prevPage = pages[pages.length - 2];
+
+// 将新数据添加到上一个页面的 data 中
+if (prevPage) {
+  const updatedGoods = prevPage.data.goods.concat(newItem);
+  prevPage.setData({
+    goods: updatedGoods
+  });
+}
   //   db.collection('fridge').add({
   // data:{
   //   openid:openid,
